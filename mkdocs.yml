@@ -1,0 +1,645 @@
+copyright: '&copy; <a href="https://akash.network" target="_blank" rel="noopener">Akash
+  Network 2024 The Akash Network Authors Documentation Distributed under CC BY 4.0</a>
+
+  '
+extra:
+  social:
+  - icon: fontawesome/brands/github-alt
+    link: https://github.com/james-willett
+  - icon: fontawesome/brands/twitter
+    link: https://twitter.com/TheJamesWillett
+  - icon: fontawesome/brands/linkedin
+    link: https://www.linkedin.com/in/willettjames/
+markdown_extensions:
+- pymdownx.highlight:
+    anchor_linenums: true
+- pymdownx.inlinehilite
+- pymdownx.snippets
+- admonition
+- pymdownx.arithmatex:
+    generic: true
+- footnotes
+- pymdownx.details
+- pymdownx.superfences
+- pymdownx.mark
+- attr_list
+nav:
+- Akash API:
+  - Overview: akash_api_overview.md
+  - Akash Node API:
+    - Overview: akash_api_node1.md
+    - Deep Dive: akash_api_node1_details.md
+    - Create Deployment Example: create_deployment_example.md
+    - Create Lease Example: create_lease_example.md
+  - Akash Provider API:
+    - Overview: akash_api_node2.md
+    - Details: akash_api_node2_details.md
+- Akash CLI: akash_cli.md
+- Protobuf Documentation:
+  - Node:
+    - Discovery-V1-Client_info:
+      - ClientInfo: node/#akash.discovery.v1.ClientInfo
+    - Discovery-V1-Akash:
+      - Akash: node/#akash.discovery.v1.Akash
+    - Provider-V1beta3-Query:
+      - QueryProviderRequest: node/#akash.provider.v1beta3.QueryProviderRequest
+      - QueryProviderResponse: node/#akash.provider.v1beta3.QueryProviderResponse
+      - QueryProvidersRequest: node/#akash.provider.v1beta3.QueryProvidersRequest
+      - QueryProvidersResponse: node/#akash.provider.v1beta3.QueryProvidersResponse
+      - Query: node/#akash.provider.v1beta3.Query
+    - Provider-V1beta3-Genesis:
+      - GenesisState: node/#akash.provider.v1beta3.GenesisState
+    - Provider-V1beta3-Provider:
+      - MsgCreateProvider: node/#akash.provider.v1beta3.MsgCreateProvider
+      - MsgCreateProviderResponse: node/#akash.provider.v1beta3.MsgCreateProviderResponse
+      - MsgDeleteProvider: node/#akash.provider.v1beta3.MsgDeleteProvider
+      - MsgDeleteProviderResponse: node/#akash.provider.v1beta3.MsgDeleteProviderResponse
+      - MsgUpdateProvider: node/#akash.provider.v1beta3.MsgUpdateProvider
+      - MsgUpdateProviderResponse: node/#akash.provider.v1beta3.MsgUpdateProviderResponse
+      - Provider: node/#akash.provider.v1beta3.Provider
+      - ProviderInfo: node/#akash.provider.v1beta3.ProviderInfo
+      - Msg: node/#akash.provider.v1beta3.Msg
+    - Provider-V1beta2-Query:
+      - QueryProviderRequest: node/#akash.provider.v1beta2.QueryProviderRequest
+      - QueryProviderResponse: node/#akash.provider.v1beta2.QueryProviderResponse
+      - QueryProvidersRequest: node/#akash.provider.v1beta2.QueryProvidersRequest
+      - QueryProvidersResponse: node/#akash.provider.v1beta2.QueryProvidersResponse
+      - Query: node/#akash.provider.v1beta2.Query
+    - Provider-V1beta2-Genesis:
+      - GenesisState: node/#akash.provider.v1beta2.GenesisState
+    - Provider-V1beta2-Provider:
+      - MsgCreateProvider: node/#akash.provider.v1beta2.MsgCreateProvider
+      - MsgCreateProviderResponse: node/#akash.provider.v1beta2.MsgCreateProviderResponse
+      - MsgDeleteProvider: node/#akash.provider.v1beta2.MsgDeleteProvider
+      - MsgDeleteProviderResponse: node/#akash.provider.v1beta2.MsgDeleteProviderResponse
+      - MsgUpdateProvider: node/#akash.provider.v1beta2.MsgUpdateProvider
+      - MsgUpdateProviderResponse: node/#akash.provider.v1beta2.MsgUpdateProviderResponse
+      - Provider: node/#akash.provider.v1beta2.Provider
+      - ProviderInfo: node/#akash.provider.v1beta2.ProviderInfo
+      - Msg: node/#akash.provider.v1beta2.Msg
+    - Provider-V1beta1-Provider:
+      - MsgCreateProvider: node/#akash.provider.v1beta1.MsgCreateProvider
+      - MsgCreateProviderResponse: node/#akash.provider.v1beta1.MsgCreateProviderResponse
+      - MsgDeleteProvider: node/#akash.provider.v1beta1.MsgDeleteProvider
+      - MsgDeleteProviderResponse: node/#akash.provider.v1beta1.MsgDeleteProviderResponse
+      - MsgUpdateProvider: node/#akash.provider.v1beta1.MsgUpdateProvider
+      - MsgUpdateProviderResponse: node/#akash.provider.v1beta1.MsgUpdateProviderResponse
+      - Provider: node/#akash.provider.v1beta1.Provider
+      - ProviderInfo: node/#akash.provider.v1beta1.ProviderInfo
+      - Msg: node/#akash.provider.v1beta1.Msg
+    - Audit-V1beta3-Audit:
+      - AttributesFilters: node/#akash.audit.v1beta3.AttributesFilters
+      - AttributesResponse: node/#akash.audit.v1beta3.AttributesResponse
+      - AuditedAttributes: node/#akash.audit.v1beta3.AuditedAttributes
+      - MsgDeleteProviderAttributes: node/#akash.audit.v1beta3.MsgDeleteProviderAttributes
+      - MsgDeleteProviderAttributesResponse: node/#akash.audit.v1beta3.MsgDeleteProviderAttributesResponse
+      - MsgSignProviderAttributes: node/#akash.audit.v1beta3.MsgSignProviderAttributes
+      - MsgSignProviderAttributesResponse: node/#akash.audit.v1beta3.MsgSignProviderAttributesResponse
+      - Provider: node/#akash.audit.v1beta3.Provider
+      - Msg: node/#akash.audit.v1beta3.Msg
+    - Audit-V1beta3-Query:
+      - QueryAllProvidersAttributesRequest: node/#akash.audit.v1beta3.QueryAllProvidersAttributesRequest
+      - QueryAuditorAttributesRequest: node/#akash.audit.v1beta3.QueryAuditorAttributesRequest
+      - QueryProviderAttributesRequest: node/#akash.audit.v1beta3.QueryProviderAttributesRequest
+      - QueryProviderAuditorRequest: node/#akash.audit.v1beta3.QueryProviderAuditorRequest
+      - QueryProviderRequest: node/#akash.audit.v1beta3.QueryProviderRequest
+      - QueryProvidersResponse: node/#akash.audit.v1beta3.QueryProvidersResponse
+      - Query: node/#akash.audit.v1beta3.Query
+    - Audit-V1beta3-Genesis:
+      - GenesisState: node/#akash.audit.v1beta3.GenesisState
+    - Audit-V1beta2-Audit:
+      - AttributesFilters: node/#akash.audit.v1beta2.AttributesFilters
+      - AttributesResponse: node/#akash.audit.v1beta2.AttributesResponse
+      - AuditedAttributes: node/#akash.audit.v1beta2.AuditedAttributes
+      - MsgDeleteProviderAttributes: node/#akash.audit.v1beta2.MsgDeleteProviderAttributes
+      - MsgDeleteProviderAttributesResponse: node/#akash.audit.v1beta2.MsgDeleteProviderAttributesResponse
+      - MsgSignProviderAttributes: node/#akash.audit.v1beta2.MsgSignProviderAttributes
+      - MsgSignProviderAttributesResponse: node/#akash.audit.v1beta2.MsgSignProviderAttributesResponse
+      - Provider: node/#akash.audit.v1beta2.Provider
+      - Msg: node/#akash.audit.v1beta2.Msg
+    - Audit-V1beta2-Query:
+      - QueryAllProvidersAttributesRequest: node/#akash.audit.v1beta2.QueryAllProvidersAttributesRequest
+      - QueryAuditorAttributesRequest: node/#akash.audit.v1beta2.QueryAuditorAttributesRequest
+      - QueryProviderAttributesRequest: node/#akash.audit.v1beta2.QueryProviderAttributesRequest
+      - QueryProviderAuditorRequest: node/#akash.audit.v1beta2.QueryProviderAuditorRequest
+      - QueryProviderRequest: node/#akash.audit.v1beta2.QueryProviderRequest
+      - QueryProvidersResponse: node/#akash.audit.v1beta2.QueryProvidersResponse
+      - Query: node/#akash.audit.v1beta2.Query
+    - Audit-V1beta2-Genesis:
+      - GenesisState: node/#akash.audit.v1beta2.GenesisState
+    - Audit-V1beta1-Audit:
+      - AttributesFilters: node/#akash.audit.v1beta1.AttributesFilters
+      - AttributesResponse: node/#akash.audit.v1beta1.AttributesResponse
+      - AuditedAttributes: node/#akash.audit.v1beta1.AuditedAttributes
+      - MsgDeleteProviderAttributes: node/#akash.audit.v1beta1.MsgDeleteProviderAttributes
+      - MsgDeleteProviderAttributesResponse: node/#akash.audit.v1beta1.MsgDeleteProviderAttributesResponse
+      - MsgSignProviderAttributes: node/#akash.audit.v1beta1.MsgSignProviderAttributes
+      - MsgSignProviderAttributesResponse: node/#akash.audit.v1beta1.MsgSignProviderAttributesResponse
+      - Provider: node/#akash.audit.v1beta1.Provider
+      - Msg: node/#akash.audit.v1beta1.Msg
+    - Take-V1beta3-Query:
+      - Query: node/#akash.take.v1beta3.Query
+    - Take-V1beta3-Genesis:
+      - GenesisState: node/#akash.take.v1beta3.GenesisState
+    - Take-V1beta3-Params:
+      - DenomTakeRate: node/#akash.take.v1beta3.DenomTakeRate
+      - Params: node/#akash.take.v1beta3.Params
+    - Deployment-V1beta3-Groupmsg:
+      - MsgCloseGroup: node/#akash.deployment.v1beta3.MsgCloseGroup
+      - MsgCloseGroupResponse: node/#akash.deployment.v1beta3.MsgCloseGroupResponse
+      - MsgPauseGroup: node/#akash.deployment.v1beta3.MsgPauseGroup
+      - MsgPauseGroupResponse: node/#akash.deployment.v1beta3.MsgPauseGroupResponse
+      - MsgStartGroup: node/#akash.deployment.v1beta3.MsgStartGroup
+      - MsgStartGroupResponse: node/#akash.deployment.v1beta3.MsgStartGroupResponse
+    - Deployment-V1beta3-Resourceunit:
+      - ResourceUnit: node/#akash.deployment.v1beta3.ResourceUnit
+    - Deployment-V1beta3-Group:
+      - Group: node/#akash.deployment.v1beta3.Group
+      - Group.State: node/#akash.deployment.v1beta3.Group.State
+    - Deployment-V1beta3-Groupid:
+      - GroupID: node/#akash.deployment.v1beta3.GroupID
+    - Deployment-V1beta3-Deployment:
+      - Deployment: node/#akash.deployment.v1beta3.Deployment
+      - DeploymentFilters: node/#akash.deployment.v1beta3.DeploymentFilters
+      - DeploymentID: node/#akash.deployment.v1beta3.DeploymentID
+      - Deployment.State: node/#akash.deployment.v1beta3.Deployment.State
+    - Deployment-V1beta3-Query:
+      - QueryDeploymentRequest: node/#akash.deployment.v1beta3.QueryDeploymentRequest
+      - QueryDeploymentResponse: node/#akash.deployment.v1beta3.QueryDeploymentResponse
+      - QueryDeploymentsRequest: node/#akash.deployment.v1beta3.QueryDeploymentsRequest
+      - QueryDeploymentsResponse: node/#akash.deployment.v1beta3.QueryDeploymentsResponse
+      - QueryGroupRequest: node/#akash.deployment.v1beta3.QueryGroupRequest
+      - QueryGroupResponse: node/#akash.deployment.v1beta3.QueryGroupResponse
+      - Query: node/#akash.deployment.v1beta3.Query
+    - Deployment-V1beta3-Deploymentmsg:
+      - MsgCloseDeployment: node/#akash.deployment.v1beta3.MsgCloseDeployment
+      - MsgCloseDeploymentResponse: node/#akash.deployment.v1beta3.MsgCloseDeploymentResponse
+      - MsgCreateDeployment: node/#akash.deployment.v1beta3.MsgCreateDeployment
+      - MsgCreateDeploymentResponse: node/#akash.deployment.v1beta3.MsgCreateDeploymentResponse
+      - MsgDepositDeployment: node/#akash.deployment.v1beta3.MsgDepositDeployment
+      - MsgDepositDeploymentResponse: node/#akash.deployment.v1beta3.MsgDepositDeploymentResponse
+      - MsgUpdateDeployment: node/#akash.deployment.v1beta3.MsgUpdateDeployment
+      - MsgUpdateDeploymentResponse: node/#akash.deployment.v1beta3.MsgUpdateDeploymentResponse
+    - Deployment-V1beta3-Service:
+      - Msg: node/#akash.deployment.v1beta3.Msg
+    - Deployment-V1beta3-Authz:
+      - DepositDeploymentAuthorization: node/#akash.deployment.v1beta3.DepositDeploymentAuthorization
+    - Deployment-V1beta3-Genesis:
+      - GenesisDeployment: node/#akash.deployment.v1beta3.GenesisDeployment
+      - GenesisState: node/#akash.deployment.v1beta3.GenesisState
+    - Deployment-V1beta3-Groupspec:
+      - GroupSpec: node/#akash.deployment.v1beta3.GroupSpec
+    - Deployment-V1beta3-Params:
+      - Params: node/#akash.deployment.v1beta3.Params
+    - Deployment-V1beta2-Groupmsg:
+      - MsgCloseGroup: node/#akash.deployment.v1beta2.MsgCloseGroup
+      - MsgCloseGroupResponse: node/#akash.deployment.v1beta2.MsgCloseGroupResponse
+      - MsgPauseGroup: node/#akash.deployment.v1beta2.MsgPauseGroup
+      - MsgPauseGroupResponse: node/#akash.deployment.v1beta2.MsgPauseGroupResponse
+      - MsgStartGroup: node/#akash.deployment.v1beta2.MsgStartGroup
+      - MsgStartGroupResponse: node/#akash.deployment.v1beta2.MsgStartGroupResponse
+    - Deployment-V1beta2-Group:
+      - Group: node/#akash.deployment.v1beta2.Group
+      - Group.State: node/#akash.deployment.v1beta2.Group.State
+    - Deployment-V1beta2-Groupid:
+      - GroupID: node/#akash.deployment.v1beta2.GroupID
+    - Deployment-V1beta2-Deployment:
+      - Deployment: node/#akash.deployment.v1beta2.Deployment
+      - DeploymentFilters: node/#akash.deployment.v1beta2.DeploymentFilters
+      - DeploymentID: node/#akash.deployment.v1beta2.DeploymentID
+      - Deployment.State: node/#akash.deployment.v1beta2.Deployment.State
+    - Deployment-V1beta2-Query:
+      - QueryDeploymentRequest: node/#akash.deployment.v1beta2.QueryDeploymentRequest
+      - QueryDeploymentResponse: node/#akash.deployment.v1beta2.QueryDeploymentResponse
+      - QueryDeploymentsRequest: node/#akash.deployment.v1beta2.QueryDeploymentsRequest
+      - QueryDeploymentsResponse: node/#akash.deployment.v1beta2.QueryDeploymentsResponse
+      - QueryGroupRequest: node/#akash.deployment.v1beta2.QueryGroupRequest
+      - QueryGroupResponse: node/#akash.deployment.v1beta2.QueryGroupResponse
+      - Query: node/#akash.deployment.v1beta2.Query
+    - Deployment-V1beta2-Deploymentmsg:
+      - MsgCloseDeployment: node/#akash.deployment.v1beta2.MsgCloseDeployment
+      - MsgCloseDeploymentResponse: node/#akash.deployment.v1beta2.MsgCloseDeploymentResponse
+      - MsgCreateDeployment: node/#akash.deployment.v1beta2.MsgCreateDeployment
+      - MsgCreateDeploymentResponse: node/#akash.deployment.v1beta2.MsgCreateDeploymentResponse
+      - MsgDepositDeployment: node/#akash.deployment.v1beta2.MsgDepositDeployment
+      - MsgDepositDeploymentResponse: node/#akash.deployment.v1beta2.MsgDepositDeploymentResponse
+      - MsgUpdateDeployment: node/#akash.deployment.v1beta2.MsgUpdateDeployment
+      - MsgUpdateDeploymentResponse: node/#akash.deployment.v1beta2.MsgUpdateDeploymentResponse
+    - Deployment-V1beta2-Service:
+      - Msg: node/#akash.deployment.v1beta2.Msg
+    - Deployment-V1beta2-Authz:
+      - DepositDeploymentAuthorization: node/#akash.deployment.v1beta2.DepositDeploymentAuthorization
+    - Deployment-V1beta2-Genesis:
+      - GenesisDeployment: node/#akash.deployment.v1beta2.GenesisDeployment
+      - GenesisState: node/#akash.deployment.v1beta2.GenesisState
+    - Deployment-V1beta2-Groupspec:
+      - GroupSpec: node/#akash.deployment.v1beta2.GroupSpec
+    - Deployment-V1beta2-Resource:
+      - Resource: node/#akash.deployment.v1beta2.Resource
+    - Deployment-V1beta2-Params:
+      - Params: node/#akash.deployment.v1beta2.Params
+    - Deployment-V1beta1-Group:
+      - Group: node/#akash.deployment.v1beta1.Group
+      - GroupID: node/#akash.deployment.v1beta1.GroupID
+      - GroupSpec: node/#akash.deployment.v1beta1.GroupSpec
+      - MsgCloseGroup: node/#akash.deployment.v1beta1.MsgCloseGroup
+      - MsgCloseGroupResponse: node/#akash.deployment.v1beta1.MsgCloseGroupResponse
+      - MsgPauseGroup: node/#akash.deployment.v1beta1.MsgPauseGroup
+      - MsgPauseGroupResponse: node/#akash.deployment.v1beta1.MsgPauseGroupResponse
+      - MsgStartGroup: node/#akash.deployment.v1beta1.MsgStartGroup
+      - MsgStartGroupResponse: node/#akash.deployment.v1beta1.MsgStartGroupResponse
+      - Resource: node/#akash.deployment.v1beta1.Resource
+      - Group.State: node/#akash.deployment.v1beta1.Group.State
+    - Deployment-V1beta1-Deployment:
+      - Deployment: node/#akash.deployment.v1beta1.Deployment
+      - DeploymentFilters: node/#akash.deployment.v1beta1.DeploymentFilters
+      - DeploymentID: node/#akash.deployment.v1beta1.DeploymentID
+      - MsgCloseDeployment: node/#akash.deployment.v1beta1.MsgCloseDeployment
+      - MsgCloseDeploymentResponse: node/#akash.deployment.v1beta1.MsgCloseDeploymentResponse
+      - MsgCreateDeployment: node/#akash.deployment.v1beta1.MsgCreateDeployment
+      - MsgCreateDeploymentResponse: node/#akash.deployment.v1beta1.MsgCreateDeploymentResponse
+      - MsgDepositDeployment: node/#akash.deployment.v1beta1.MsgDepositDeployment
+      - MsgDepositDeploymentResponse: node/#akash.deployment.v1beta1.MsgDepositDeploymentResponse
+      - MsgUpdateDeployment: node/#akash.deployment.v1beta1.MsgUpdateDeployment
+      - MsgUpdateDeploymentResponse: node/#akash.deployment.v1beta1.MsgUpdateDeploymentResponse
+      - Deployment.State: node/#akash.deployment.v1beta1.Deployment.State
+      - Msg: node/#akash.deployment.v1beta1.Msg
+    - Deployment-V1beta1-Query:
+      - QueryDeploymentRequest: node/#akash.deployment.v1beta1.QueryDeploymentRequest
+      - QueryDeploymentResponse: node/#akash.deployment.v1beta1.QueryDeploymentResponse
+      - QueryDeploymentsRequest: node/#akash.deployment.v1beta1.QueryDeploymentsRequest
+      - QueryDeploymentsResponse: node/#akash.deployment.v1beta1.QueryDeploymentsResponse
+      - QueryGroupRequest: node/#akash.deployment.v1beta1.QueryGroupRequest
+      - QueryGroupResponse: node/#akash.deployment.v1beta1.QueryGroupResponse
+      - Query: node/#akash.deployment.v1beta1.Query
+    - Deployment-V1beta1-Authz:
+      - DepositDeploymentAuthorization: node/#akash.deployment.v1beta1.DepositDeploymentAuthorization
+    - Deployment-V1beta1-Genesis:
+      - GenesisDeployment: node/#akash.deployment.v1beta1.GenesisDeployment
+      - GenesisState: node/#akash.deployment.v1beta1.GenesisState
+    - Deployment-V1beta1-Params:
+      - Params: node/#akash.deployment.v1beta1.Params
+    - Staking-V1beta3-Genesis:
+      - GenesisState: node/#akash.staking.v1beta3.GenesisState
+    - Staking-V1beta3-Params:
+      - Params: node/#akash.staking.v1beta3.Params
+    - Cert-V1beta3-Query:
+      - CertificateResponse: node/#akash.cert.v1beta3.CertificateResponse
+      - QueryCertificatesRequest: node/#akash.cert.v1beta3.QueryCertificatesRequest
+      - QueryCertificatesResponse: node/#akash.cert.v1beta3.QueryCertificatesResponse
+      - Query: node/#akash.cert.v1beta3.Query
+    - Cert-V1beta3-Cert:
+      - Certificate: node/#akash.cert.v1beta3.Certificate
+      - CertificateFilter: node/#akash.cert.v1beta3.CertificateFilter
+      - CertificateID: node/#akash.cert.v1beta3.CertificateID
+      - MsgCreateCertificate: node/#akash.cert.v1beta3.MsgCreateCertificate
+      - MsgCreateCertificateResponse: node/#akash.cert.v1beta3.MsgCreateCertificateResponse
+      - MsgRevokeCertificate: node/#akash.cert.v1beta3.MsgRevokeCertificate
+      - MsgRevokeCertificateResponse: node/#akash.cert.v1beta3.MsgRevokeCertificateResponse
+      - Certificate.State: node/#akash.cert.v1beta3.Certificate.State
+      - Msg: node/#akash.cert.v1beta3.Msg
+    - Cert-V1beta3-Genesis:
+      - GenesisCertificate: node/#akash.cert.v1beta3.GenesisCertificate
+      - GenesisState: node/#akash.cert.v1beta3.GenesisState
+    - Cert-V1beta2-Query:
+      - CertificateResponse: node/#akash.cert.v1beta2.CertificateResponse
+      - QueryCertificatesRequest: node/#akash.cert.v1beta2.QueryCertificatesRequest
+      - QueryCertificatesResponse: node/#akash.cert.v1beta2.QueryCertificatesResponse
+      - Query: node/#akash.cert.v1beta2.Query
+    - Cert-V1beta2-Cert:
+      - Certificate: node/#akash.cert.v1beta2.Certificate
+      - CertificateFilter: node/#akash.cert.v1beta2.CertificateFilter
+      - CertificateID: node/#akash.cert.v1beta2.CertificateID
+      - MsgCreateCertificate: node/#akash.cert.v1beta2.MsgCreateCertificate
+      - MsgCreateCertificateResponse: node/#akash.cert.v1beta2.MsgCreateCertificateResponse
+      - MsgRevokeCertificate: node/#akash.cert.v1beta2.MsgRevokeCertificate
+      - MsgRevokeCertificateResponse: node/#akash.cert.v1beta2.MsgRevokeCertificateResponse
+      - Certificate.State: node/#akash.cert.v1beta2.Certificate.State
+      - Msg: node/#akash.cert.v1beta2.Msg
+    - Cert-V1beta2-Genesis:
+      - GenesisCertificate: node/#akash.cert.v1beta2.GenesisCertificate
+      - GenesisState: node/#akash.cert.v1beta2.GenesisState
+    - Escrow-V1beta3-Types:
+      - Account: node/#akash.escrow.v1beta3.Account
+      - AccountID: node/#akash.escrow.v1beta3.AccountID
+      - FractionalPayment: node/#akash.escrow.v1beta3.FractionalPayment
+      - Account.State: node/#akash.escrow.v1beta3.Account.State
+      - FractionalPayment.State: node/#akash.escrow.v1beta3.FractionalPayment.State
+    - Escrow-V1beta3-Query:
+      - QueryAccountsRequest: node/#akash.escrow.v1beta3.QueryAccountsRequest
+      - QueryAccountsResponse: node/#akash.escrow.v1beta3.QueryAccountsResponse
+      - QueryPaymentsRequest: node/#akash.escrow.v1beta3.QueryPaymentsRequest
+      - QueryPaymentsResponse: node/#akash.escrow.v1beta3.QueryPaymentsResponse
+      - Query: node/#akash.escrow.v1beta3.Query
+    - Escrow-V1beta3-Genesis:
+      - GenesisState: node/#akash.escrow.v1beta3.GenesisState
+    - Escrow-V1beta2-Types:
+      - Account: node/#akash.escrow.v1beta2.Account
+      - AccountID: node/#akash.escrow.v1beta2.AccountID
+      - FractionalPayment: node/#akash.escrow.v1beta2.FractionalPayment
+      - Account.State: node/#akash.escrow.v1beta2.Account.State
+      - FractionalPayment.State: node/#akash.escrow.v1beta2.FractionalPayment.State
+    - Escrow-V1beta2-Query:
+      - QueryAccountsRequest: node/#akash.escrow.v1beta2.QueryAccountsRequest
+      - QueryAccountsResponse: node/#akash.escrow.v1beta2.QueryAccountsResponse
+      - QueryPaymentsRequest: node/#akash.escrow.v1beta2.QueryPaymentsRequest
+      - QueryPaymentsResponse: node/#akash.escrow.v1beta2.QueryPaymentsResponse
+      - Query: node/#akash.escrow.v1beta2.Query
+    - Escrow-V1beta2-Genesis:
+      - GenesisState: node/#akash.escrow.v1beta2.GenesisState
+    - Escrow-V1beta1-Types:
+      - Account: node/#akash.escrow.v1beta1.Account
+      - AccountID: node/#akash.escrow.v1beta1.AccountID
+      - Payment: node/#akash.escrow.v1beta1.Payment
+      - Account.State: node/#akash.escrow.v1beta1.Account.State
+      - Payment.State: node/#akash.escrow.v1beta1.Payment.State
+    - Escrow-V1beta1-Query:
+      - QueryAccountsRequest: node/#akash.escrow.v1beta1.QueryAccountsRequest
+      - QueryAccountsResponse: node/#akash.escrow.v1beta1.QueryAccountsResponse
+      - QueryPaymentsRequest: node/#akash.escrow.v1beta1.QueryPaymentsRequest
+      - QueryPaymentsResponse: node/#akash.escrow.v1beta1.QueryPaymentsResponse
+      - Query: node/#akash.escrow.v1beta1.Query
+    - Escrow-V1beta1-Genesis:
+      - GenesisState: node/#akash.escrow.v1beta1.GenesisState
+    - Market-V1beta4-Bid:
+      - Bid: node/#akash.market.v1beta4.Bid
+      - BidFilters: node/#akash.market.v1beta4.BidFilters
+      - BidID: node/#akash.market.v1beta4.BidID
+      - MsgCloseBid: node/#akash.market.v1beta4.MsgCloseBid
+      - MsgCloseBidResponse: node/#akash.market.v1beta4.MsgCloseBidResponse
+      - MsgCreateBid: node/#akash.market.v1beta4.MsgCreateBid
+      - MsgCreateBidResponse: node/#akash.market.v1beta4.MsgCreateBidResponse
+      - ResourceOffer: node/#akash.market.v1beta4.ResourceOffer
+      - Bid.State: node/#akash.market.v1beta4.Bid.State
+    - Market-V1beta4-Query:
+      - QueryBidRequest: node/#akash.market.v1beta4.QueryBidRequest
+      - QueryBidResponse: node/#akash.market.v1beta4.QueryBidResponse
+      - QueryBidsRequest: node/#akash.market.v1beta4.QueryBidsRequest
+      - QueryBidsResponse: node/#akash.market.v1beta4.QueryBidsResponse
+      - QueryLeaseRequest: node/#akash.market.v1beta4.QueryLeaseRequest
+      - QueryLeaseResponse: node/#akash.market.v1beta4.QueryLeaseResponse
+      - QueryLeasesRequest: node/#akash.market.v1beta4.QueryLeasesRequest
+      - QueryLeasesResponse: node/#akash.market.v1beta4.QueryLeasesResponse
+      - QueryOrderRequest: node/#akash.market.v1beta4.QueryOrderRequest
+      - QueryOrderResponse: node/#akash.market.v1beta4.QueryOrderResponse
+      - QueryOrdersRequest: node/#akash.market.v1beta4.QueryOrdersRequest
+      - QueryOrdersResponse: node/#akash.market.v1beta4.QueryOrdersResponse
+      - Query: node/#akash.market.v1beta4.Query
+    - Market-V1beta4-Service:
+      - Msg: node/#akash.market.v1beta4.Msg
+    - Market-V1beta4-Lease:
+      - Lease: node/#akash.market.v1beta4.Lease
+      - LeaseFilters: node/#akash.market.v1beta4.LeaseFilters
+      - LeaseID: node/#akash.market.v1beta4.LeaseID
+      - MsgCloseLease: node/#akash.market.v1beta4.MsgCloseLease
+      - MsgCloseLeaseResponse: node/#akash.market.v1beta4.MsgCloseLeaseResponse
+      - MsgCreateLease: node/#akash.market.v1beta4.MsgCreateLease
+      - MsgCreateLeaseResponse: node/#akash.market.v1beta4.MsgCreateLeaseResponse
+      - MsgWithdrawLease: node/#akash.market.v1beta4.MsgWithdrawLease
+      - MsgWithdrawLeaseResponse: node/#akash.market.v1beta4.MsgWithdrawLeaseResponse
+      - Lease.State: node/#akash.market.v1beta4.Lease.State
+    - Market-V1beta4-Genesis:
+      - GenesisState: node/#akash.market.v1beta4.GenesisState
+    - Market-V1beta4-Order:
+      - Order: node/#akash.market.v1beta4.Order
+      - OrderFilters: node/#akash.market.v1beta4.OrderFilters
+      - OrderID: node/#akash.market.v1beta4.OrderID
+      - Order.State: node/#akash.market.v1beta4.Order.State
+    - Market-V1beta4-Params:
+      - Params: node/#akash.market.v1beta4.Params
+    - Market-V1beta3-Bid:
+      - Bid: node/#akash.market.v1beta3.Bid
+      - BidFilters: node/#akash.market.v1beta3.BidFilters
+      - BidID: node/#akash.market.v1beta3.BidID
+      - MsgCloseBid: node/#akash.market.v1beta3.MsgCloseBid
+      - MsgCloseBidResponse: node/#akash.market.v1beta3.MsgCloseBidResponse
+      - MsgCreateBid: node/#akash.market.v1beta3.MsgCreateBid
+      - MsgCreateBidResponse: node/#akash.market.v1beta3.MsgCreateBidResponse
+      - Bid.State: node/#akash.market.v1beta3.Bid.State
+    - Market-V1beta3-Query:
+      - QueryBidRequest: node/#akash.market.v1beta3.QueryBidRequest
+      - QueryBidResponse: node/#akash.market.v1beta3.QueryBidResponse
+      - QueryBidsRequest: node/#akash.market.v1beta3.QueryBidsRequest
+      - QueryBidsResponse: node/#akash.market.v1beta3.QueryBidsResponse
+      - QueryLeaseRequest: node/#akash.market.v1beta3.QueryLeaseRequest
+      - QueryLeaseResponse: node/#akash.market.v1beta3.QueryLeaseResponse
+      - QueryLeasesRequest: node/#akash.market.v1beta3.QueryLeasesRequest
+      - QueryLeasesResponse: node/#akash.market.v1beta3.QueryLeasesResponse
+      - QueryOrderRequest: node/#akash.market.v1beta3.QueryOrderRequest
+      - QueryOrderResponse: node/#akash.market.v1beta3.QueryOrderResponse
+      - QueryOrdersRequest: node/#akash.market.v1beta3.QueryOrdersRequest
+      - QueryOrdersResponse: node/#akash.market.v1beta3.QueryOrdersResponse
+      - Query: node/#akash.market.v1beta3.Query
+    - Market-V1beta3-Service:
+      - Msg: node/#akash.market.v1beta3.Msg
+    - Market-V1beta3-Lease:
+      - Lease: node/#akash.market.v1beta3.Lease
+      - LeaseFilters: node/#akash.market.v1beta3.LeaseFilters
+      - LeaseID: node/#akash.market.v1beta3.LeaseID
+      - MsgCloseLease: node/#akash.market.v1beta3.MsgCloseLease
+      - MsgCloseLeaseResponse: node/#akash.market.v1beta3.MsgCloseLeaseResponse
+      - MsgCreateLease: node/#akash.market.v1beta3.MsgCreateLease
+      - MsgCreateLeaseResponse: node/#akash.market.v1beta3.MsgCreateLeaseResponse
+      - MsgWithdrawLease: node/#akash.market.v1beta3.MsgWithdrawLease
+      - MsgWithdrawLeaseResponse: node/#akash.market.v1beta3.MsgWithdrawLeaseResponse
+      - Lease.State: node/#akash.market.v1beta3.Lease.State
+    - Market-V1beta3-Genesis:
+      - GenesisState: node/#akash.market.v1beta3.GenesisState
+    - Market-V1beta3-Order:
+      - Order: node/#akash.market.v1beta3.Order
+      - OrderFilters: node/#akash.market.v1beta3.OrderFilters
+      - OrderID: node/#akash.market.v1beta3.OrderID
+      - Order.State: node/#akash.market.v1beta3.Order.State
+    - Market-V1beta3-Params:
+      - Params: node/#akash.market.v1beta3.Params
+    - Market-V1beta2-Bid:
+      - Bid: node/#akash.market.v1beta2.Bid
+      - BidFilters: node/#akash.market.v1beta2.BidFilters
+      - BidID: node/#akash.market.v1beta2.BidID
+      - MsgCloseBid: node/#akash.market.v1beta2.MsgCloseBid
+      - MsgCloseBidResponse: node/#akash.market.v1beta2.MsgCloseBidResponse
+      - MsgCreateBid: node/#akash.market.v1beta2.MsgCreateBid
+      - MsgCreateBidResponse: node/#akash.market.v1beta2.MsgCreateBidResponse
+      - Bid.State: node/#akash.market.v1beta2.Bid.State
+    - Market-V1beta2-Query:
+      - QueryBidRequest: node/#akash.market.v1beta2.QueryBidRequest
+      - QueryBidResponse: node/#akash.market.v1beta2.QueryBidResponse
+      - QueryBidsRequest: node/#akash.market.v1beta2.QueryBidsRequest
+      - QueryBidsResponse: node/#akash.market.v1beta2.QueryBidsResponse
+      - QueryLeaseRequest: node/#akash.market.v1beta2.QueryLeaseRequest
+      - QueryLeaseResponse: node/#akash.market.v1beta2.QueryLeaseResponse
+      - QueryLeasesRequest: node/#akash.market.v1beta2.QueryLeasesRequest
+      - QueryLeasesResponse: node/#akash.market.v1beta2.QueryLeasesResponse
+      - QueryOrderRequest: node/#akash.market.v1beta2.QueryOrderRequest
+      - QueryOrderResponse: node/#akash.market.v1beta2.QueryOrderResponse
+      - QueryOrdersRequest: node/#akash.market.v1beta2.QueryOrdersRequest
+      - QueryOrdersResponse: node/#akash.market.v1beta2.QueryOrdersResponse
+      - Query: node/#akash.market.v1beta2.Query
+    - Market-V1beta2-Service:
+      - Msg: node/#akash.market.v1beta2.Msg
+    - Market-V1beta2-Lease:
+      - Lease: node/#akash.market.v1beta2.Lease
+      - LeaseFilters: node/#akash.market.v1beta2.LeaseFilters
+      - LeaseID: node/#akash.market.v1beta2.LeaseID
+      - MsgCloseLease: node/#akash.market.v1beta2.MsgCloseLease
+      - MsgCloseLeaseResponse: node/#akash.market.v1beta2.MsgCloseLeaseResponse
+      - MsgCreateLease: node/#akash.market.v1beta2.MsgCreateLease
+      - MsgCreateLeaseResponse: node/#akash.market.v1beta2.MsgCreateLeaseResponse
+      - MsgWithdrawLease: node/#akash.market.v1beta2.MsgWithdrawLease
+      - MsgWithdrawLeaseResponse: node/#akash.market.v1beta2.MsgWithdrawLeaseResponse
+      - Lease.State: node/#akash.market.v1beta2.Lease.State
+    - Market-V1beta2-Genesis:
+      - GenesisState: node/#akash.market.v1beta2.GenesisState
+    - Market-V1beta2-Order:
+      - Order: node/#akash.market.v1beta2.Order
+      - OrderFilters: node/#akash.market.v1beta2.OrderFilters
+      - OrderID: node/#akash.market.v1beta2.OrderID
+      - Order.State: node/#akash.market.v1beta2.Order.State
+    - Market-V1beta2-Params:
+      - Params: node/#akash.market.v1beta2.Params
+    - Inflation-V1beta3-Genesis:
+      - GenesisState: node/#akash.inflation.v1beta3.GenesisState
+    - Inflation-V1beta3-Params:
+      - Params: node/#akash.inflation.v1beta3.Params
+    - Inflation-V1beta2-Genesis:
+      - GenesisState: node/#akash.inflation.v1beta2.GenesisState
+    - Inflation-V1beta2-Params:
+      - Params: node/#akash.inflation.v1beta2.Params
+    - Base-V1beta3-Memory:
+      - Memory: node/#akash.base.v1beta3.Memory
+    - Base-V1beta3-Cpu:
+      - CPU: node/#akash.base.v1beta3.CPU
+    - Base-V1beta3-Resources:
+      - Resources: node/#akash.base.v1beta3.Resources
+    - Base-V1beta3-Attribute:
+      - Attribute: node/#akash.base.v1beta3.Attribute
+      - PlacementRequirements: node/#akash.base.v1beta3.PlacementRequirements
+      - SignedBy: node/#akash.base.v1beta3.SignedBy
+    - Base-V1beta3-Endpoint:
+      - Endpoint: node/#akash.base.v1beta3.Endpoint
+      - Endpoint.Kind: node/#akash.base.v1beta3.Endpoint.Kind
+    - Base-V1beta3-Gpu:
+      - GPU: node/#akash.base.v1beta3.GPU
+    - Base-V1beta3-Storage:
+      - Storage: node/#akash.base.v1beta3.Storage
+    - Base-V1beta3-Resourcevalue:
+      - ResourceValue: node/#akash.base.v1beta3.ResourceValue
+    - Base-V1beta2-Resourceunits:
+      - ResourceUnits: node/#akash.base.v1beta2.ResourceUnits
+    - Base-V1beta2-Attribute:
+      - Attribute: node/#akash.base.v1beta2.Attribute
+      - PlacementRequirements: node/#akash.base.v1beta2.PlacementRequirements
+      - SignedBy: node/#akash.base.v1beta2.SignedBy
+    - Base-V1beta2-Endpoint:
+      - Endpoint: node/#akash.base.v1beta2.Endpoint
+      - Endpoint.Kind: node/#akash.base.v1beta2.Endpoint.Kind
+    - Base-V1beta2-Resource:
+      - CPU: node/#akash.base.v1beta2.CPU
+      - Memory: node/#akash.base.v1beta2.Memory
+      - Storage: node/#akash.base.v1beta2.Storage
+    - Base-V1beta2-Resourcevalue:
+      - ResourceValue: node/#akash.base.v1beta2.ResourceValue
+    - Base-V1beta1-Attribute:
+      - Attribute: node/#akash.base.v1beta1.Attribute
+      - PlacementRequirements: node/#akash.base.v1beta1.PlacementRequirements
+      - SignedBy: node/#akash.base.v1beta1.SignedBy
+    - Base-V1beta1-Endpoint:
+      - Endpoint: node/#akash.base.v1beta1.Endpoint
+      - Endpoint.Kind: node/#akash.base.v1beta1.Endpoint.Kind
+    - Base-V1beta1-Resource:
+      - CPU: node/#akash.base.v1beta1.CPU
+      - Memory: node/#akash.base.v1beta1.Memory
+      - ResourceUnits: node/#akash.base.v1beta1.ResourceUnits
+      - Storage: node/#akash.base.v1beta1.Storage
+    - Base-V1beta1-Resourcevalue:
+      - ResourceValue: node/#akash.base.v1beta1.ResourceValue
+    - Gov-V1beta3-Genesis:
+      - GenesisState: node/#akash.gov.v1beta3.GenesisState
+    - Gov-V1beta3-Params:
+      - DepositParams: node/#akash.gov.v1beta3.DepositParams
+      - Scalar Value Types: node/#scalar-value-types
+  - Provider:
+    - Manifest-V2beta1-Group:
+      - Group: provider/#akash.manifest.v2beta1.Group
+    - Manifest-V2beta1-Httpoptions:
+      - ServiceExposeHTTPOptions: provider/#akash.manifest.v2beta1.ServiceExposeHTTPOptions
+    - Manifest-V2beta1-Serviceexpose:
+      - ServiceExpose: provider/#akash.manifest.v2beta1.ServiceExpose
+    - Manifest-V2beta1-Service:
+      - Service: provider/#akash.manifest.v2beta1.Service
+      - ServiceParams: provider/#akash.manifest.v2beta1.ServiceParams
+      - StorageParams: provider/#akash.manifest.v2beta1.StorageParams
+    - Manifest-V2beta2-Group:
+      - Group: provider/#akash.manifest.v2beta2.Group
+    - Manifest-V2beta2-Httpoptions:
+      - ServiceExposeHTTPOptions: provider/#akash.manifest.v2beta2.ServiceExposeHTTPOptions
+    - Manifest-V2beta2-Serviceexpose:
+      - ServiceExpose: provider/#akash.manifest.v2beta2.ServiceExpose
+    - Manifest-V2beta2-Service:
+      - Service: provider/#akash.manifest.v2beta2.Service
+      - ServiceImageCredentials: provider/#akash.manifest.v2beta2.ServiceImageCredentials
+      - ServiceParams: provider/#akash.manifest.v2beta2.ServiceParams
+      - StorageParams: provider/#akash.manifest.v2beta2.StorageParams
+    - Provider-V1-Status:
+      - BidEngineStatus: provider/#akash.provider.v1.BidEngineStatus
+      - ClusterStatus: provider/#akash.provider.v1.ClusterStatus
+      - Inventory: provider/#akash.provider.v1.Inventory
+      - Leases: provider/#akash.provider.v1.Leases
+      - ManifestStatus: provider/#akash.provider.v1.ManifestStatus
+      - Reservations: provider/#akash.provider.v1.Reservations
+      - ReservationsMetric: provider/#akash.provider.v1.ReservationsMetric
+      - ResourcesMetric: provider/#akash.provider.v1.ResourcesMetric
+      - ResourcesMetric.StorageEntry: provider/#akash.provider.v1.ResourcesMetric.StorageEntry
+      - Status: provider/#akash.provider.v1.Status
+    - Provider-V1-Service:
+      - ProviderRPC: provider/#akash.provider.v1.ProviderRPC
+    - Inventory-V1-Memory:
+      - Memory: provider/#akash.inventory.v1.Memory
+      - MemoryInfo: provider/#akash.inventory.v1.MemoryInfo
+    - Inventory-V1-Cpu:
+      - CPU: provider/#akash.inventory.v1.CPU
+      - CPUInfo: provider/#akash.inventory.v1.CPUInfo
+    - Inventory-V1-Cluster:
+      - Cluster: provider/#akash.inventory.v1.Cluster
+    - Inventory-V1-Resources:
+      - NodeResources: provider/#akash.inventory.v1.NodeResources
+    - Inventory-V1-Node:
+      - Node: provider/#akash.inventory.v1.Node
+      - NodeCapabilities: provider/#akash.inventory.v1.NodeCapabilities
+    - Inventory-V1-Resourcepair:
+      - ResourcePair: provider/#akash.inventory.v1.ResourcePair
+    - Inventory-V1-Gpu:
+      - GPU: provider/#akash.inventory.v1.GPU
+      - GPUInfo: provider/#akash.inventory.v1.GPUInfo
+    - Inventory-V1-Storage:
+      - Storage: provider/#akash.inventory.v1.Storage
+      - StorageInfo: provider/#akash.inventory.v1.StorageInfo
+    - Inventory-V1-Service:
+      - ClusterRPC: provider/#akash.inventory.v1.ClusterRPC
+      - NodeRPC: provider/#akash.inventory.v1.NodeRPC
+      - Scalar Value Types: provider/#scalar-value-types
+site_name: Akash Developer Documentation
+theme:
+  features:
+  - toc.integrate
+  - navigation.top
+  - search.suggest
+  - search.highlight
+  - content.tabs.link
+  - content.code.annotation
+  - content.code.copy
+  language: en
+  name: material
+  palette:
+  - accent: purple
+    primary: red
+    scheme: default
+    toggle:
+      icon: material/toggle-switch-off-outline
+      name: Switch to dark mode
+  - accent: lime
+    primary: red
+    scheme: slate
+    toggle:
+      icon: material/toggle-switch
+      name: Switch to light mode

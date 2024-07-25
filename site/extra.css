@@ -1,0 +1,48 @@
+/* Adjust the sidebar width */
+.md-sidebar--primary {
+    width: 300px; /* Adjust this value as needed */
+}
+
+/* Ensure the nav items use the full width of the sidebar */
+.md-nav__item {
+    width: 100%;
+}
+
+/* Adjust the link elements within the nav */
+.md-nav__link {
+    display: block;
+    white-space: normal; /* Allow text to wrap */
+    overflow: visible;   /* Ensure overflow text is visible */
+    text-overflow: clip; /* Prevent text from being clipped */
+}
+
+/* Prevent nav titles from being truncated */
+.md-nav__title {
+    white-space: normal; /* Allow text to wrap */
+    overflow: visible;   /* Ensure overflow text is visible */
+    text-overflow: clip; /* Prevent text from being clipped */
+}
+
+/* Ensure the nav list uses the full width of the sidebar */
+.md-nav {
+    width: 100%;
+}
+
+/* Restore the visibility of the arrows */
+.md-nav__toggle {
+    display: inline-block;
+    width: auto; /* Ensure the toggle has the appropriate width */
+    padding: 0;  /* Remove any padding that might affect the appearance */
+}
+
+/* Ensure the icons for expandable fields are visible */
+.md-nav__toggle:before {
+    content: "\f078"; /* Default FontAwesome down arrow */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 8px; /* Add space between the arrow and text */
+}
+
+.md-nav__item--active > .md-nav__link .md-nav__toggle:before {
+    content: "\f077"; /* Default FontAwesome up arrow for active items */
+}

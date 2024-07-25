@@ -1,0 +1,91 @@
+import os
+import re
+import yaml
+
+def preprocess_node_md(file_path):
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+    
+    new_lines = []
+    for line in lines:
+        # Remove leading spaces before Markdown headers for ## and ###
+        new_line = re.sub(r'^\s+(##+)', r'\1', line)
+        new_lines.append(new_line)
+    
+    with open(file_path, 'w') as file:
+        file.writelines(new_lines)
+
+    print("Preprocessing complete. Updated node.md")
+
+def parse_protobuf_documentation(doc_path):
+    """
+    Parse the protobuf documentation and return the structured data.
+    """
+    with open(doc_path, 'r') as f:
+        lines = f.readlines()
+    
+    nav_entries = []
+    current_section = None
+
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+
+        main_section_match = re.match(r'- \[(.*?)\]\(#(.*?)\)', line)
+        sub_section_match = re.match(r'\s{4}- \[(.*?)\]\(#(.*?)\)', line)
+
+        if main_section_match:
+            main_section = main_section_match.group(1)
+            main_link = main_section_match.group(2)
+            current_section = {main_section: []}
+            nav_entries.append(current_section)
+        elif sub_section_match and current_section:
+            sub_section = sub_section_match.group(1)
+            sub_link = sub_section_match.group(2)
+            current_section[list(current_section.keys())[0]].append({sub_section: sub_link})
+
+    return nav_entries
+
+def update_mkdocs_yml(nav_entries, mkdocs_yml_path):
+    """
+    Update the mkdocs.yml file with the new protobuf documentation entries.
+    """
+    with open(mkdocs_yml_path, 'r') as f:
+        mkdocs_yml = yaml.safe_load(f)
+    
+    nav = mkdocs_yml.get('nav', [])
+    
+    protobuf_doc_section = None
+    for entry in nav:
+        if 'Protobuf Documentation' in entry:
+            protobuf_doc_section = entry['Protobuf Documentation']
+            break
+
+    if (protobuf_doc_section is None):
+        protobuf_doc_section = []
+        nav.append({'Protobuf Documentation': protobuf_doc_section})
+    
+    for entry in nav_entries:
+        for main_section, sub_sections in entry.items():
+            main_section_entry = {main_section: []}
+            for sub_section in sub_sections:
+                for sub_section_title, sub_section_link in sub_section.items():
+                    main_section_entry[main_section].append({sub_section_title: f'node/#{sub_section_link}'})
+            protobuf_doc_section.append(main_section_entry)
+
+    mkdocs_yml['nav'] = nav
+
+    with open(mkdocs_yml_path, 'w') as f:
+        yaml.dump(mkdocs_yml, f, default_flow_style=False)
+
+def main():
+    doc_path = os.path.join('docs', 'node.md')  # Path to the parsed protobuf documentation file in docs sub-directory
+    mkdocs_yml_path = 'mkdocs.yml'  # Path to the mkdocs.yml file
+
+    preprocess_node_md(doc_path)  # Preprocess node.md to remove leading spaces
+    nav_entries = parse_protobuf_documentation(doc_path)
+    update_mkdocs_yml(nav_entries, mkdocs_yml_path)
+
+if __name__ == "__main__":
+    main()
