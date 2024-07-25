@@ -619,6 +619,7 @@ nav:
       - NodeRPC: provider/#akash.inventory.v1.NodeRPC
       - Scalar Value Types: provider/#scalar-value-types
 site_name: Akash Developer Documentation
+site_url: https://chainzero.github.io/docu/
 theme:
   features:
   - toc.integrate
